@@ -205,7 +205,7 @@ Model {
   }
   System {
     Name                    "mic"
-    Location                [723, 43, 2002, 600]
+    Location                [94, 232, 1373, 789]
     Open                    on
     ModelBrowserVisibility  off
     ModelBrowserWidth       200
