@@ -20,58 +20,63 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">Template</a>
+        <a class="navbar-brand">Ball on spool HMI</a>
     </div>
 </nav>
-<div class="row">
 <main id="content" class="container-fluid">
     <div class="row">
-    <div class="col p-5">
-        <canvas id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;">
-            Your browser does not support the HTML canvas tag.
-        </canvas>
-    </div>
-    <div class="card col p-5 m-5">
-        <div class="mb-3">
-            <label for="Fi1" class="form-label">Spool angle</label>
-            <input type="text" id="Fi1" name="Fi1" value="NaN" readonly class="form-control">
+        <div class="col p-5">
+            <canvas id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;">
+                Your browser does not support the HTML canvas tag.
+            </canvas>
         </div>
-        <div class="mb-3">
-            <label for="dFi1" class="form-label">Spool speed</label>
-            <input type="text" id="dFi1" name="dFi1" value="NaN" readonly class="form-control">
+        <div class="card col p-5 m-5">
+            <div class="mb-3">
+                <label for="Fi1" class="form-label">Spool angle</label>
+                <input type="text" id="Fi1" name="Fi1" value="NaN" readonly class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="dFi1" class="form-label">Spool speed</label>
+                <input type="text" id="dFi1" name="dFi1" value="NaN" readonly class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="Fi2" class="form-label">Ball angle</label>
+                <input type="text" id="Fi2" name="Fi2" value="NaN" readonly class="form-control">
+            </div>
+            <div class="mb-5">
+                <label for="dFi2" class="form-label">Ball Speed</label>
+                <input type="text" id="dFi2" name="dFi2" value="NaN" readonly class="form-control">
+            </div>
+            <div class="mb-3">
+                <button type="button" id="nudge" name="nudge" class="btn btn-primary">Nudge</button>
+                <button type="button" id="rst" name="rst" class="btn btn-secondary">Reset of simulation</button>
+            </div>
+            <div class="slidecontainer" id="nudgeSlider">
+                <label for="nudgeForce" class="form-label">Nudge force</label>
+                <input type="range" min="0.05" max="10" value="0.05" class="slider form-range" id="nudgeForce" step="0.01">
+            </div>
+            <div class="slidecontainer mb-3">
+                <label for="initBallPos" class="form-label">Intial angle</label>
+                <input type="range" min="-1.5" max="1.5" value="0" class="slider form-range" id="initBallPos" step="0.01">
+            </div>
+            <div class="slidecontainer mb-3">
+                <label for="disturbanceLevel" class="form-label">Disturbance level</label>
+                <input type="range" min="0.01" max="1" value="0.05" class="slider form-range" id="disturbanceLevel" step="0.01">
+            </div>
+            <div class="form-check" id="disturbanceToggle" class="mb-3">
+                <input type="checkbox" id="disturbance" name="disturbance" value="1" class="form-check-input">
+                <label class="form-check-label" for="disturbance">Disturbance</label>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="Fi2" class="form-label">Ball angle</label>
-            <input type="text" id="Fi2" name="Fi2" value="NaN" readonly class="form-control">
-        </div>
-        <div class="mb-5">
-            <label for="dFi2" class="form-label">Ball Speed</label>
-            <input type="text" id="dFi2" name="dFi2" value="NaN" readonly class="form-control">
-        </div>
-        <div class="mb-3">
-            <button type="button" id="nudge" name="nudge" class="btn btn-primary">Å touch</button>
-            <button type="button" id="rst" name="rst" class="btn btn-secondary">Reset_simulace</button>
-        </div>
-        <div class="slidecontainer" id="nudgeSlider">
-            <label for="nudgeForce" class="form-label">Nudge force</label>
-            <input type="range" min="0.05" max="10" value="0.05" class="slider form-range" id="nudgeForce" step="0.01">
-        </div>
-        <div class="slidecontainer mb-3">
-            <label for="initBallPos" class="form-label">Intial angle</label>
-            <input type="range" min="-1.5" max="1.5" value="0" class="slider form-range" id="initBallPos" step="0.01">
-        </div>
-        <div class="slidecontainer mb-3">
-            <label for="disturbanceLevel" class="form-label">Disturbance level</label>
-            <input type="range" min="0.01" max="1" value="0.05" class="slider form-range" id="disturbanceLevel" step="0.01">
-        </div>
-        <div class="form-check" id="disturbanceToggle" class="mb-3">
-            <input type="checkbox" id="disturbance" name="disturbance" value="1" class="form-check-input">
-            <label class="form-check-label" for="disturbance">Disturbance</label>
-        </div>
-    </div>
     </div>
 </main>
-
 </body>
-
+<footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2021 Copyright:
+        <a class="text-dark" href="https://cz.linkedin.com/in/david-%C5%BEahour-64072b166">David Žahour</a>
+    </div>
+    <!-- Copyright -->
+</footer>
 </html>
