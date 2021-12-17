@@ -9,9 +9,14 @@
     </title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/checkboox.css">
+    <link rel="stylesheet" type="text/css" href="css/button.css">
     <!-- JS -->
     <script type="text/javascript" src="js/rexhmi-vendor.min.js?version=2.50.10-12359"></script>
     <script type="text/javascript" src="js/rexhmi.min.js?version=2.50.10-12359"></script>
+    <script type="text/javascript" src="js/canavas_anim.js">
+
+    </script>
     <script type="text/javascript" src="js/main.js"></script>
 </head>
 
@@ -21,36 +26,62 @@
 </header>
 <main id="content">
     <div>
-        <p>Poloha Mice</p>
-        <label for="Fi1">Value</label>
-        <input type="text" id="Fi1" name="Fi1" value="NaN" readonly>
+        <canvas id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML canvas tag.
+        </canvas>
     </div>
-    <div>
-        <p>Test Bleh</p>
-        <label for="dFi1">Value</label>
-        <input type="text" id="dFi1" name="dFi1" value="NaN" readonly>
+    <div id = "data">
+        <div>
+            <label for="Fi1">Spool angle</label>
+            <input type="text" id="Fi1" name="Fi1" value="NaN" readonly>
+        </div>
+        <div>
+            <label for="dFi1">Spool speed</label>
+            <input type="text" id="dFi1" name="dFi1" value="NaN" readonly>
+        </div>
+        <div>
+            <label for="Fi2">Ball angle</label>
+            <input type="text" id="Fi2" name="Fi2" value="NaN" readonly>
+        </div>
+        <div>
+            <label for="dFi2">Ball Speed</label>
+            <input type="text" id="dFi2" name="dFi2" value="NaN" readonly>
+        </div>
     </div>
-    <div>
-        <p>Test Bleh</p>
-        <label for="Fi2">Value</label>
-        <input type="text" id="Fi2" name="Fi2" value="NaN" readonly>
-    </div>
-    <div>
-        <p>Test Bleh</p>
-        <label for="dFi2">Value</label>
-        <input type="text" id="dFi2" name="dFi2" value="NaN" readonly>
-    </div>
+
+
+
     <div>
         <button type="button" id="rst" name="rst">Reset_simulace</button>
     </div>
 
-    <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="50" class="slider" id="pushForce">
-    </div>
-    <div>
+
+<div id="nudgeWrapper">
+    <div id = nudgeButton>
         <button type="button" id="nudge" name="nudge">Štouch</button>
     </div>
-    <input type="checkbox" id="disturbance" name = "disturbance">
+
+    <div class="slidecontainer" id="nudgeSlider">
+        <label for="nudgeForce" >Nudge force</label>
+        <input type="range" min="0.05" max="10" value="0.05" class="slider" id="nudgeForce" step="0.01">
+    </div>
+</div>
+    <div class="slidecontainer">
+        <label for="initBallPos" >Intial angle</label>
+        <input type="range" min="-1.5" max="1.5" value="0" class="slider" id="initBallPos" step="0.01" >
+    </div>
+
+    <div class="slidecontainer">
+        <label for="disturbanceLevel" >Disturbance level</label>
+        <input type="range" min="0.01" max="1" value="0.05" class="slider" id="disturbanceLevel" step="0.01" >
+    </div>
+
+
+    <label class="switch" id = "disturbanceToggle">
+        <input type="checkbox"  id="disturbance" name="disturbance" value="1">
+        <span class="slider round" id="sliderNudge"></span>
+    </label>
+
 </main>
 </body>
 

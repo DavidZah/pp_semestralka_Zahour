@@ -26,3 +26,35 @@ input:read-only{
     background-color: #dfdfdf;
 }
 
+canvas{
+    float: left;
+}
+label { display: inline-block; width: 210px; text-align: right; }
+
+input[type=text], select {
+    padding: 12px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: content-box;
+    width: 45px;
+}
+canvas{
+    margin:30px;
+}
+#nudgeWrapper {
+    overflow: hidden; /* will contain if #first is longer than #second */
+}
+#nudgeButton {
+
+    float:left; /* add this */
+
+}
+#initBallPos{
+    vertical-align:middle;
+}
+#nudgeSlider {
+    vertical-align:middle;
+    /* if you don't want #second to wrap below #first */
+}
