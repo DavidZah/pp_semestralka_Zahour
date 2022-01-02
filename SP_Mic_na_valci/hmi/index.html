@@ -26,25 +26,25 @@
 <main id="content" class="container-fluid">
     <div class="row">
         <div class="col p-5">
-            <canvas id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;">
+            <canvas id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;background: url('./images/canavas_background.png')">
                 Your browser does not support the HTML canvas tag.
             </canvas>
         </div>
         <div class="card col p-5 m-5">
             <div class="mb-3">
-                <label for="Fi1" class="form-label">Spool angle</label>
+                <label for="Fi1" class="form-label">Spool angle [deg]</label>
                 <input type="text" id="Fi1" name="Fi1" value="NaN" readonly class="form-control">
             </div>
             <div class="mb-3">
-                <label for="dFi1" class="form-label">Spool speed</label>
+                <label for="dFi1" class="form-label">Spool speed [deg/s]</label>
                 <input type="text" id="dFi1" name="dFi1" value="NaN" readonly class="form-control">
             </div>
             <div class="mb-3">
-                <label for="Fi2" class="form-label">Ball angle</label>
+                <label for="Fi2" class="form-label">Ball angle [deg]</label>
                 <input type="text" id="Fi2" name="Fi2" value="NaN" readonly class="form-control">
             </div>
             <div class="mb-5">
-                <label for="dFi2" class="form-label">Ball Speed</label>
+                <label for="dFi2" class="form-label">Ball Speed [deg/s]</label>
                 <input type="text" id="dFi2" name="dFi2" value="NaN" readonly class="form-control">
             </div>
             <div class="mb-3">
@@ -57,7 +57,7 @@
             </div>
             <div class="slidecontainer mb-3">
                 <label for="initBallPos" class="form-label">Intial angle</label>
-                <input type="range" min="-1.5" max="1.5" value="0" class="slider form-range" id="initBallPos" step="0.01">
+                <input type="range" min="-0.6" max="0.6" value="0" class="slider form-range" id="initBallPos" step="0.01">
             </div>
             <div class="slidecontainer mb-3">
                 <label for="disturbanceLevel" class="form-label">Disturbance level</label>

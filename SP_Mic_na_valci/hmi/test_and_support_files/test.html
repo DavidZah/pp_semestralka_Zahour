@@ -14,6 +14,8 @@
   function draw_ball(bal_x,bal_y,rot_center,angle){
 
     var radius = 60
+    ctx.lineWidth = "2"
+    ctx.fillStyle = "#ED5A36"
     ctx.translate(rot_center[0],rot_center[1])
     ctx.rotate(angle)
     ctx.beginPath();
@@ -21,6 +23,7 @@
     ctx.stroke();
     ctx.rotate(-angle);
     ctx.translate(-rot_center[0],-rot_center[1])
+    ctx.fill()
   }
 
   function draw_spool(bal_x,bal_y,angle){
@@ -28,6 +31,9 @@
     var width = bal_x
     var height = bal_y
     var radius = 100
+    ctx.lineWidth = "2"
+    ctx.lineStyle = "grey";
+    ctx.fillStyle = "#B2AEAD"
     ctx.translate(width/2,height/2)
     ctx.rotate(angle)
     ctx.beginPath();
@@ -40,36 +46,38 @@
     ctx.lineTo(0,radius)
     ctx.rotate(-angle);
     ctx.translate(-width/2,-height/2)
+    ctx.fill()
     ctx.stroke();
   }
 
   function draw_spool_base(width,height){
-    const y_pos = 80
-    const x_pos = -100
-    const rect_x = 200
-    const rect_y = 140
 
-
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
     ctx.beginPath();
     ctx.lineWidth = "6";
-    ctx.strokeStyle = "red";
-    ctx.translate(width/2+x_pos,height/2+y_pos)
-    ctx.rect(0, 0, rect_x, rect_y);
-    ctx.translate(-width/2+x_pos,-height/2+y_pos)
-    ctx.moveTo(rect_x/2,0)
-    ctx.bezierCurveTo(75, 37, 70, 25, 50, 25);
-    ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
-    ctx.bezierCurveTo(20, 80, 40, 102, 75, 120);
-    ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
-    ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
-    ctx.bezierCurveTo(85, 25, 75, 37, 75, 40);
-
+    ctx.strokeStyle = "grey";
+    ctx.fillStyle = 'grey'
+    ctx.translate(width/2,height/2)
+    ctx.fillRect(-125,0, 250, 150)
+    ctx.fillRect(-125,0,10,-200);
+    ctx.fillRect(115,0,10,-200);
+    ctx.closePath()
+    ctx.stroke()
+    ctx.beginPath()
+    ctx.arc(-105,-200,10,-2*Math.PI,0);
+    ctx.closePath()
+    ctx.stroke()
+    ctx.beginPath()
+    ctx.arc(105,-200,10,0,2*Math.PI);
     ctx.stroke()
 
+    ctx.lineWidth="1"
+    ctx.translate(-width/2,-height/2)
   }
-  draw_ball(161,0,[800/2,550/2],Math.PI/180*270);
+  //draw_spool_base(800,550);
+ draw_ball(161,0,[800/2,550/2],Math.PI/180*270);
   draw_spool(800,550,1)
-  draw_spool_base(800,600);
+
 
 </script>
 

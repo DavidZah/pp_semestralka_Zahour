@@ -23,7 +23,7 @@ REX.HMI.init = function () {
         let value =itm.getValue();
         spool_angle = value
         // Konverze číselné hodnoty na string s třemi desetinnými místy
-        fi1Input.value = radians_to_degrees(value).toFixed(3);;
+        fi1Input.value = radians_to_degrees(value).toFixed(1);;
         render_new_frame(ctx,spool_angle,Number(ball_angle))
     });
 
@@ -31,7 +31,7 @@ REX.HMI.init = function () {
     REX.HMI.get('dFi1').on('change',function(itm){
         let value = itm.getValue();
         // Konverze číselné hodnoty na string s třemi desetinnými místy
-        dfi1Input.value = radians_to_degrees(value).toFixed(3);;
+        dfi1Input.value = radians_to_degrees(value).toFixed(1);;
     });
 
     let fi2Input = document.getElementById('Fi2');
@@ -39,7 +39,7 @@ REX.HMI.init = function () {
         let value = itm.getValue();
         ball_angle=value
         // Konverze číselné hodnoty na string s třemi desetinnými místy
-        fi2Input.value = radians_to_degrees(value).toFixed(3);;
+        fi2Input.value = radians_to_degrees(value).toFixed(1);;
         render_new_frame(ctx,spool_angle,Number(ball_angle))
     });
 
@@ -47,7 +47,7 @@ REX.HMI.init = function () {
     REX.HMI.get('dFi2').on('change',function(itm){
         let value =itm.getValue();
         // Konverze číselné hodnoty na string s třemi desetinnými místy
-        dfi2Input.value = radians_to_degrees(value).toFixed(3);
+        dfi2Input.value = radians_to_degrees(value).toFixed(1);
     });
 
     let pushBall = document.getElementById("rst")
